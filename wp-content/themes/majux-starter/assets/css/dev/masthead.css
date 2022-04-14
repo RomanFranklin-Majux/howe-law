@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+# Masthead
+--------------------------------------------------------------*/
+
+.masthead {
+	min-height: 400px;
+	background: rgba(0, 0, 0, 0.05);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+/* Home Masthead
+---------------------------*/
+.home .masthead		  		{ height: calc(100vh - var(--header-height)); }
+.admin-bar.home .masthead 	{ height: calc(100vh - var(--header-height) - 32px); }
+
+
+
+@media (max-width: 767px) {
+	.home .masthead		  		{ height: calc(100vh - var(--header-height-768)); }
+	.admin-bar.home .masthead 	{ height: calc(100vh - var(--header-height-768) - 46px); }
+}
+
+@media (max-width: 576px) {
+	.home .masthead		  		{ height: calc(100vh - var(--header-height-576)); }
+	.admin-bar.home .masthead 	{ height: calc(100vh - var(--header-height-576) - 46px); }
+}

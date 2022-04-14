@@ -1,0 +1,13 @@
+{
+  "name": "majux-starter",
+  "version": "1.0.0",
+  "description": "Starter theme for Majux projects",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "concat-css": "cat assets/css/dev/* > assets/css/dist/all.css",
+    "minify-css": "css-minify -f assets/css/dist/all.css -o assets/css/dist/",
+    "bundle-css": "npm run concat-css && npm run minify-css"
+  },
+  "author": "Majux",
+  "license": "ISC"
+}

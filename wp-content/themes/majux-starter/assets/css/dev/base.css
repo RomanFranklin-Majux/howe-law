@@ -1,0 +1,103 @@
+/*--------------------------------------------------------------
+# Default
+--------------------------------------------------------------*/
+
+:root {
+	--main-color: 			#2a497f;
+	--secondary-color: 		#333;
+	--accent-color: 		#666;
+	--body-text-color:  	#000;
+	--heading-color: 		#000;
+	--link-color: 			#2a497f;
+	--main-font: 			'proxima-nova', sans-serif;
+	--heading-font: 		'proxima-nova', sans-serif;
+	--header-height: 		130px;
+	--header-height-768: 	240px;
+	--header-height-576: 	240px;
+}
+
+/*@font-face {
+	font-family: 'Satoshi Regular';
+	src: url('assets/fonts/satoshi-regular.otf');
+}*/
+
+
+/*--------------------------------------------------------------
+# Global
+--------------------------------------------------------------*/
+
+html, body {
+	overflow-x: hidden;
+}
+
+body {
+	background: #fff;
+	font-family: var(--main-font);
+	font-weight: 300;
+	color: var(--body-text-color);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;	
+}
+
+body.admin-bar { min-height: calc(100vh - 32px); }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 { 
+	color: var(--heading-color);
+	font-family: var(--heading-font);
+	font-weight: 700;
+	font-style: normal;
+	text-transform: uppercase;	
+}
+
+h1, .h1 {
+	font-size: 40px;
+	letter-spacing: 12px;
+	line-height: 49px;
+}
+
+h2, .h2 {
+	font-size: 25px;
+	line-height: 30px;
+	letter-spacing: 5px;
+	color: #000;
+}
+
+p { letter-spacing: 1.5px; line-height: 25px; margin-bottom: 30px; }
+
+a { text-decoration: none; color: var(--link-color); }
+
+img { max-width: 100%; height: auto; }
+
+.list-style-none {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.force-full-width {
+	width: 100vw;
+	margin-left: calc(50% - 50vw);
+}
+
+.full-height {
+	height: calc(100vh - var(--header-height));
+}
+
+.btn {
+	min-width: 237px;
+	padding: 20px 18px;
+	border: 0;
+	border-radius: 0;
+	font-family: var(--main-font);
+	font-size: 16px;
+	font-weight: 800;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.btn-primary  		{ background: var(--main-color); }
+.btn-secondary 		{ background: var(--secondary-color); }

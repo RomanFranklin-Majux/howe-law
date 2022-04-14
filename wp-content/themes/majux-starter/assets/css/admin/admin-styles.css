@@ -1,0 +1,13 @@
+.float-left, .float-start {
+	float: left!important;
+	clear: none!important;
+}
+
+.float-right, .float-end {
+	float: right!important;
+	clear: none!important;
+}
+
+.no-min { min-height: auto!important; }
+
+#adminmenu #menu-pages { margin-bottom: 11px; }
