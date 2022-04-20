@@ -56,4 +56,44 @@
 		echo '<a href="' . site_url() . '/wp-admin/nav-menus.php?action=edit&menu=0">Add Menu</a>';
 	}
 
+
+
+
+function youTubeEmbed($videoURL) {
+	$yt_string = '~(?#!js YouTubeId Rev:20160125_1800)
+	        # Match non-linked youtube URL in the wild. (Rev:20130823)
+	        https?://          # Required scheme. Either http or https.
+	        (?:[0-9A-Z-]+\.)?  # Optional subdomain.
+	        (?:                # Group host alternatives.
+	          youtu\.be/       # Either youtu.be,
+	        | youtube          # or youtube.com or
+	          (?:-nocookie)?   # youtube-nocookie.com
+	          \.com            # followed by
+	          \S*?             # Allow anything up to VIDEO_ID,
+	          [^\w\s-]         # but char before ID is non-ID char.
+	        )                  # End host alternatives.
+	        ([\w-]{11})        # $1: VIDEO_ID is exactly 11 chars.
+	        (?=[^\w-]|$)       # Assert next char is non-ID or EOS.
+	        (?!                # Assert URL is not pre-linked.
+	          [?=&+%\w.-]*     # Allow URL (query) remainder.
+	          (?:              # Group pre-linked alternatives.
+	            [\'"][^<>]*>   # Either inside a start tag,
+	          | </a>           # or inside <a> element text contents.
+	          )                # End recognized pre-linked alts.
+	        )                  # End negative lookahead assertion.
+	        [?=&+%\w.-]*       # Consume any URL (query) remainder.
+	        ~ix';
+	$check 	= preg_match( $yt_string, $videoURL);
+	$url 	= preg_replace($yt_string, 'http://www.youtube.com/embed/$1',
+	        $videoURL);
+
+	if ($check) :
+		$video = '<iframe src="' . $url . '" frameborder="0" allowfullscreen autoplay="0"></iframe>';
+	else :
+		$video = '<video controls><source src="' . $url . '"></video>';
+	endif;
+
+	return $video;
+}
+
 	?>

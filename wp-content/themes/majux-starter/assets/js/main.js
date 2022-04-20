@@ -37,3 +37,32 @@ jQuery(document).ready(function($) {
   // Mobile Menu dropdowns
   $(document).on('click', '.dropdown-btn', function() { $(this).parent().toggleClass('sub-menu-open'); });
 })
+
+
+
+
+
+/*--------------------------------------------------------------
+# Swipers
+--------------------------------------------------------------*/
+
+// Featured In slider
+const swiperFeatured = new Swiper('.swiper-featured-in', {
+  // Optional parameters
+  loop: true,
+  speed: 1200,
+  // Default
+  slidesPerView: 1,
+  spaceBetween: 15,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-featured-in-next',
+    prevEl: '.swiper-featured-in-prev',
+  },
+  breakpoints: {
+    992: {
+      slidesPerView: 5,
+      spaceBetween: 25,
+    },
+  },
+});

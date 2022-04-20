@@ -4,10 +4,10 @@
 
 .masthead {
 	min-height: 400px;
-	background: rgba(0, 0, 0, 0.05);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
 
@@ -16,6 +16,103 @@
 .home .masthead		  		{ height: calc(100vh - var(--header-height)); }
 .admin-bar.home .masthead 	{ height: calc(100vh - var(--header-height) - 32px); }
 
+.masthead-home {
+	padding: 0 4% 55px;
+	justify-content: flex-end;
+}
+
+.masthead-home .tagline {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: var(--main-color);
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 6px 0;
+	font-size: var(--font-size-l);
+	font-weight: 600;
+	font-style: italic;
+}
+
+.attorney-image {
+	z-index: -1;
+	height: 100%;
+	overflow: hidden;
+	flex: 1;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 4%;	
+    max-width: 33%;
+}
+
+.masthead-content-wrapper {
+	width: 70%;
+}
+
+.masthead-content {
+	flex: 1;
+}
+
+.masthead-content .text-banner {
+	background: #f4f4f4;
+	padding: 47px 47px 47px 0;
+	position: relative;
+	color: var(--main-color);
+	font-size: var(--font-size-xl);
+	line-height: var(--font-size-xl);
+	text-transform: uppercase;
+}
+
+.masthead-content .text-banner::before {
+	background: inherit;
+	content: "";
+	position: absolute;
+	right: 20%;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	transform: skewX(-20deg);
+	z-index: -1;
+}
+
+.masthead-content .cases {
+	padding-top: 30px;
+	padding-right: 30px;
+}
+
+.masthead-content .cases p {
+	line-height: 1;
+	font-family: var(--main-font);
+	font-weight: 700;
+}
+
+.masthead-contact-form {
+	background: var(--main-color);
+	padding: 40px 40px 20px;
+	color: #fff;
+	/*width: 41%;*/
+	width: 58%;
+}
+
+.masthead-contact-form p {
+	letter-spacing: 0;
+	font-family: var(--main-font);
+}
+
+.masthead-contact-form textarea {
+	max-height: 127px;
+}
+
+.masthead-contact-form input[type="submit"] {
+	display: block;
+	margin: 0 auto;
+	font-size: var(--font-size-m);
+}
+
+.masthead-contact-form .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span.name_first { margin-right: 12px; }
 
 
 @media (max-width: 767px) {

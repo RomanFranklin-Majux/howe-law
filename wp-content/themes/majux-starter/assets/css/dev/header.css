@@ -37,6 +37,49 @@ header#main .btn {
 
 header#main .btn:first-child { margin-bottom: 15px; }
 
+.callout {
+	color: var(--main-color);
+}
+
+.callout .left {
+	font-weight: 600;
+	text-align: right;
+	line-height: 1;
+	margin-right: 20px;
+	text-transform: uppercase;	
+}
+
+.callout .left strong {
+	font-weight: 800;
+}
+
+.callout .right {
+	border: 1px solid var(--main-color);
+	text-align: center;
+	padding: 4px 60px;
+}
+
+.callout .right span.number {
+	font-size: 38px;
+	line-height: 1;
+}
+
+.espanol-button {
+	position: absolute;
+	bottom: 1px;
+	right: -20px;
+	transform: translateY(100%) skewX(20deg);
+	background: #C9C9C9;
+	font-size: 15px;
+	text-transform: uppercase;
+	color: var(--main-color);
+	padding: 8px 50px 8px 40px;
+}
+
+.espanol-button span {
+	display: block;
+	transform: skewX(-20deg);
+}
 
 
 /*--------------------------------------------------------------

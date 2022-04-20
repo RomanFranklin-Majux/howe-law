@@ -11,7 +11,7 @@
 
 
 		<?php /* Main Content */ ?>
-		<?php the_content(); ?>
+		<?php get_template_part('template-parts/content/loop') ?>
 
 
 	<?php /* Content Wrapper End / Sidebar */ ?>

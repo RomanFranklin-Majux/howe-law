@@ -2,7 +2,7 @@
 
 
 	<?php /* Masthead */ ?>
-	<?php get_template_part('template-parts/masthead/masthead'); ?>
+	<?php get_template_part('template-parts/masthead/masthead-home'); ?>
 
 
 	<?php /* Content Wrapper Start */ ?>
@@ -11,7 +11,16 @@
 
 
 		<?php /* Main Content */ ?>
-		<?php the_content(); ?>
+		<?php 	
+		$sections = get_field('sections'); 
+		foreach($sections as $args) : 
+
+			$layout = $args['acf_fc_layout'];
+			$format = array_key_exists('layout', $args) ? $args['layout'] : NULL;
+
+			get_template_part('template-parts/sections/front-page/' . $layout, $format, $args); 
+
+		endforeach; ?>
 
 
 	<?php /* Content Wrapper End / Sidebar */ ?>
