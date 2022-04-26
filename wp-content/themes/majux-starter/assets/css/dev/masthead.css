@@ -19,6 +19,7 @@
 .masthead-home {
 	padding: 0 4% 55px;
 	justify-content: flex-end;
+	min-height: 660px;
 }
 
 .masthead-home .tagline {
@@ -46,6 +47,13 @@
     bottom: 0;
     left: 4%;	
     max-width: 33%;
+}
+
+.attorney-image img {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: bottom;
 }
 
 .masthead-content-wrapper {
@@ -114,6 +122,35 @@
 
 .masthead-contact-form .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span.name_first { margin-right: 12px; }
 
+
+
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+
+@media (max-width:  1600px) {
+	.masthead-content .text-banner { padding: 30px 40px 30px 0; }
+	.attorney-image { left: 0; max-width: 35%; }
+
+	body .masthead-home .gform_wrapper.gravity-theme input[type="text"], 
+	body .masthead-home .gform_wrapper.gravity-theme input[type="email"], 
+	body .masthead-home .gform_wrapper.gravity-theme input[type="tel"], 
+	body .masthead-home .gform_wrapper.gravity-theme textarea {
+		padding: 10px 16px;
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 1200px) {
+
+
+	
+}
+
+@media (max-width: 991px) {
+
+}
 
 @media (max-width: 767px) {
 	.home .masthead		  		{ height: calc(100vh - var(--header-height-768)); }

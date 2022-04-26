@@ -1,1 +1,1 @@
-<?php get_template_part('template-parts/sections/callout'); ?>
+<?php get_template_part('template-parts/sections/callout', null, $args); ?>

@@ -1,7 +1,7 @@
 <?php
 
 if ( ! defined( 'MAJUX_VERSION' ) ) {
-  define( 'MAJUX_VERSION', '0.0.28' );
+  define( 'MAJUX_VERSION', '0.0.32' );
 }
 
 function majux_theme_setup() {

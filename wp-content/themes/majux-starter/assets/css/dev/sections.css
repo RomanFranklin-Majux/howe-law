@@ -102,3 +102,52 @@ section.full-width-image .caption {
 	max-width: 1300px;
 	padding: 40px;
 }
+
+
+
+
+/* Callout
+-------------------- */
+
+.callout-box {
+	background: var(--main-color);
+	color: #fff;
+	text-align: center;
+	padding: 60px;
+}
+
+
+.callout-box p.headline {
+	font-size: var(--font-size-xxxxl);
+	line-height: var(--font-size-xxxxl);
+	font-weight: 600;
+}
+
+.callout-box p.description {
+	margin: 30px 0 0;
+	font-size: var(--font-size-xxl);
+	line-height: var(--font-size-xxl);
+	font-weight: 600;
+}
+
+
+
+
+
+
+@media (max-width:  1600px) {
+	.callout-box {
+		padding: 30px 40px 40px;
+	}
+
+	.callout-box p.headline {
+		font-size: var(--font-size-xxxl);
+		line-height: calc(var(--font-size-xxxl) + 14px);
+	}
+
+	.callout-box p.description {
+		margin-top: 30px;
+		font-size: var(--font-size-xl);
+		line-height: var(--font-size-xl);
+	}	
+}

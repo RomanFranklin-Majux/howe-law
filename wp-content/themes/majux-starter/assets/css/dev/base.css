@@ -163,3 +163,30 @@ body .gform_wrapper.gravity-theme textarea::placeholder {
 	font-size: var(--font-size-m);
 	line-height: 1;
 }
+
+
+
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+
+@media (max-width:  1600px) {
+	:root {
+	    --font-size-s: 			16px;
+	    --font-size-m: 			18px;
+		--font-size-l: 			22px;
+	    --font-size-xl: 		24px;
+	    --font-size-xxl: 		30px;
+	    --font-size-xxxl: 		40px;
+	    --font-size-xxxxl: 		45px;
+	}
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
