@@ -1,4 +1,4 @@
-<section class="featured-in force-full-width">
+<section class="featured-in force-full-width pt-5">
 	<?php get_template_part('template-parts/modules/section-heading', null, $args['heading']); ?>
 
 	<div class="position-relative">

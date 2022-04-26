@@ -97,19 +97,16 @@ h1, h2, h3, h4, h5, h6,
 	font-family: var(--heading-font);
 	font-weight: 700;
 	font-style: normal;
-	text-transform: uppercase;	
 }
 
 h1, .h1 {
-	font-size: 40px;
-	letter-spacing: 12px;
-	line-height: 49px;
+	font-size: var(--font-size-xxxxl);
+	line-height: calc(var(--font-size-xxxxl) + 8px);
 }
 
 h2, .h2 {
-	font-size: 25px;
-	line-height: 30px;
-	letter-spacing: 5px;
+	font-size: 48px;
+	line-height: 56px;
 	color: #000;
 }
 

@@ -1,6 +1,11 @@
 <div class="d-flex align-items-center h-100">
-	<?php $video = youTubeEmbed($args['video']); ?>
 	<div class="video-wrapper">
-		<?php echo $video; ?>
+	<?php if (preg_match('/wistia/', $args['video'])) : ?>
+		<?php 
+		//$video = '[embed]' . $args['video'] . '[/embed]';
+		echo wp_oembed_get($args['video']); ?>
+	<?php else : ?>
+		<?php echo youTubeEmbed($args['video']); ?>
+	<?php endif; ?>
 	</div>
 </div>

@@ -66,3 +66,25 @@ const swiperFeatured = new Swiper('.swiper-featured-in', {
     },
   },
 });
+
+// Featured In slider
+const swiperAwards = new Swiper('.swiper-awards', {
+  // Optional parameters
+  loop: true,
+  speed: 1200,
+  // Default
+  slidesPerView: 2,
+  spaceBetween: 15,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-awards-next',
+    prevEl: '.swiper-awards-prev',
+  },
+  enabled: true,
+  breakpoints: {
+    992: {
+      enabled: false,
+      slidesPerView: 5,
+    },
+  },
+});

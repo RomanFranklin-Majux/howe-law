@@ -1,7 +1,7 @@
 <?php
 
 if ( ! defined( 'MAJUX_VERSION' ) ) {
-  define( 'MAJUX_VERSION', '0.0.32' );
+  define( 'MAJUX_VERSION', '0.0.46' );
 }
 
 function majux_theme_setup() {
@@ -19,6 +19,8 @@ function majux_theme_setup() {
 
   add_theme_support( 'widgets' );
   add_theme_support( 'widgets-block-editor' );
+
+  wp_oembed_add_provider( '/https?:\/\/(.+)?(wistia.com|wi.st)\/(medias|embed)\/.*/', 'http://fast.wistia.com/oembed', true);
 
   // Menus
   register_nav_menus(
@@ -44,7 +46,8 @@ function majux_enqueue_styles() {
   wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
 
   // Swiper CSS
-  wp_enqueue_style( 'swiper-css', 'https://unpkg.com/swiper@7/swiper-bundle.min.css' );
+  //wp_enqueue_style( 'swiper-css', 'https://unpkg.com/swiper@7/swiper-bundle.min.css' );
+  wp_enqueue_style( 'swiper-css', get_stylesheet_directory_uri() . '/vendor/swiper/swiper-bundle.min.css' );
 
   // Font Awesome
   // wp_enqueue_style('font-awesome', 'https://use.fontawesome.com/releases/v5.15.1/css/all.css');
@@ -66,6 +69,7 @@ function majux_enqueue_styles() {
 
   // Swiper JS
   wp_register_script( 'swiper-js', 'https://unpkg.com/swiper@7/swiper-bundle.min.js' );
+  //wp_register_script( 'swiper-js', get_stylesheet_directory_uri() . '/vendor/swiper/swiper-bundle.min.js' );
 
   // Main JS
   wp_register_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array(), MAJUX_VERSION, true);

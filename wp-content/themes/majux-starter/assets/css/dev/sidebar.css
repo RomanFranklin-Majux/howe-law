@@ -3,6 +3,29 @@
 --------------------------------------------------------------*/
 
 .sidebar {
-	background: #fafafa;
+	background: var(--main-color);
 	padding: 32px;
+	height: 100%;
+}
+
+.sidebar .sidebar-widget {
+	margin-bottom: 60px;
+}
+
+.sidebar p.widget-title {
+	color: #fff;
+	text-align: center;
+	font-size: var(--font-size-xl);
+	font-family: var(--main-font);
+	font-weight: 600;
+}
+
+.sidebar ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.sidebar ul a {
+	color: #fff;
 }

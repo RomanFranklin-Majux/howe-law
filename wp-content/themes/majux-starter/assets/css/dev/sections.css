@@ -52,10 +52,11 @@ section.featured-in .swiper-slide img {
 	background: rgba(0, 0, 0, 0.1);
 }
 
-.two-columns .video-wrapper iframe {
+.two-columns .video-wrapper iframe,
+.two-columns .video-wrapper > div {
 	height: 100%;
 	width: 100%;
-	position: absolute;
+	position: absolute!important;
 	top: 0;
 	left: 0;
 }
@@ -106,6 +107,146 @@ section.full-width-image .caption {
 
 
 
+/* Videos
+-------------------- */
+
+section.videos .video-wrapper {
+	/*width: 50%;*/
+}
+
+
+
+
+
+
+/* Cards
+-------------------- */
+
+.card {
+	border-radius: 0;
+	border: 0;
+	box-shadow: 0 9px 13px #00000029;
+	background: #45B280;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	min-height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.home .card {
+	background: var(--main-color);
+}
+
+.card .cover {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.card .cover p {
+	text-transform: uppercase;
+	font-weight: 700;
+	margin: 0;
+}
+
+.card p.title {
+	font-size: 18px;
+	letter-spacing: 2px;
+	color: #fff;
+}
+
+.card p.money {
+	color: #fff;
+	font-size: 32px;
+	line-height: 36px;
+}
+
+.card .description { 
+	opacity: 0;
+	padding: 16px 20px 0; 
+	transform: translateY(10px);
+	position: relative; 
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	transform-origin: 50% 100%;
+}
+.card .description p {
+	font-size: 12px;
+	color: #fff;
+	line-height: 14px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.card .description p:last-child { margin-bottom: 0; }
+
+
+.card .wrap {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+}
+
+.card .wrap .cover {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: 0.3s;
+}
+
+.card .wrap .cover.hide {
+	position: relative;
+	visibility: hidden;
+}
+
+.card .wrap .description {
+	justify-self: flex-end;
+}
+
+.card .card-layout{
+	visibility: hidden;
+	padding-bottom: 20px;
+}
+
+.card:hover .wrap .cover { transform: translateY(0); top: 0; }
+.card:hover .description  		{ opacity: 1; transform: translateY(0); }
+
+
+/* Awards
+-------------------- */
+
+section.awards {
+	background: #ebebeb;
+	padding: 60px 4%;
+}
+
+.award-logo {
+	width: 20%;
+	margin-bottom: 60px;
+}
+
+.award-logo img {
+	height: 125px;
+	width: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+
 /* Callout
 -------------------- */
 
@@ -116,17 +257,20 @@ section.full-width-image .caption {
 	padding: 60px;
 }
 
+.callout-box p {
+	font-family: var(--main-font);
+}
 
 .callout-box p.headline {
-	font-size: var(--font-size-xxxxl);
-	line-height: var(--font-size-xxxxl);
+	font-size: var(--font-size-xxxl);
+	line-height: calc(var(--font-size-xxxl) + 14px);
 	font-weight: 600;
 }
 
 .callout-box p.description {
-	margin: 30px 0 0;
-	font-size: var(--font-size-xxl);
-	line-height: var(--font-size-xxl);
+	margin: 36px 0 0;
+	font-size: var(--font-size-xl);
+	line-height: var(--font-size-xl);
 	font-weight: 600;
 }
 
@@ -139,15 +283,4 @@ section.full-width-image .caption {
 	.callout-box {
 		padding: 30px 40px 40px;
 	}
-
-	.callout-box p.headline {
-		font-size: var(--font-size-xxxl);
-		line-height: calc(var(--font-size-xxxl) + 14px);
-	}
-
-	.callout-box p.description {
-		margin-top: 30px;
-		font-size: var(--font-size-xl);
-		line-height: var(--font-size-xl);
-	}	
 }

@@ -1,5 +1,20 @@
 <?php 
 
+/* Sidebar Widgets */
+function sidebar_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Interior Sidebar',
+		'id'            => 'interior_sidebar',
+		'before_widget' => '<div class="sidebar-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<p class="widget-title">',
+		'after_title'   => '</p>',
+	) );
+
+}
+add_action( 'widgets_init', 'sidebar_widgets_init' );
+
 function footer_widgets_init() {
 
 	register_sidebar( array(
@@ -31,3 +46,4 @@ function footer_widgets_init() {
 
 }
 add_action( 'widgets_init', 'footer_widgets_init' );
+
