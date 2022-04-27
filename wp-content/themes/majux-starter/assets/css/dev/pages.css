@@ -1,0 +1,124 @@
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+
+.item a,
+.item a:hover {
+	color: #000;
+}
+
+.item-image {
+	position: relative;
+	margin-bottom: 20px;
+	background: url('../../images/practice-area-default.jpg') center no-repeat;
+	background-size: cover;
+}
+
+.item-image::before {
+	content: "";
+	padding-top: 100%;
+	display: block;
+}
+
+.item-image img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.item .details { 
+	text-align: center; 
+	font-size: 26px;
+	font-family: var(--secondary-font);
+}
+
+.item .details .name { font-weight: 700; }
+
+
+
+
+
+/* About Us
+-------------------- */
+
+.attorney .btn-primary {
+	background: #C6C6C6;
+}
+
+.attorney:hover .btn-primary {
+	background: var(--secondary-color);
+}
+
+
+
+
+/* Testimonials
+-------------------- */
+
+.testimonial {
+	background: #F4F4F4;
+	border: 1px solid #707070;
+	box-shadow: 0 7px 7px #00000029;
+	padding: 40px;
+	height: 100%;
+}
+
+.testimonial .rating {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.testimonial span.star {
+	height: 46px;
+    width: 46px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;	
+    background-image: url('../../images/star.png');
+}
+
+.testimonial .quote { flex: 1; }
+
+.testimonial p.highlight {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.testimonial span { font-family: var(--secondary-font); }
+
+.testimonial span.name {
+	font-size: 24px;
+	line-height: 24px;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.testimonial span.source {
+	font-weight: 400;
+}
+
+
+
+
+/* Results
+-------------------- */
+
+.page-template-results .card p.money {
+	font-size: 52px;
+	line-height: 58px;
+	margin-bottom: 8px;
+}
+
+.page-template-results .card p.title { 
+	font-weight: 300; 
+}
+
+.page-template-results .card .description p {
+	font-size: 18px;
+	line-height: 20px;
+}
+

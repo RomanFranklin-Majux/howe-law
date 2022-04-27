@@ -28,7 +28,7 @@ function al_attorney_post_type() {
 			'has_archive' 		=> false,
 			'hierarchical'		=> true,
 			'rewrite'			=> array( 'slug' => $slug ),
-			'menu_position'     => 20.3,
+			'menu_position'     => 20,
 			'menu_icon'			=> 'dashicons-admin-users',
 			'supports'			=> array( 'title', 'editor', 'thumbnail', 'page-attributes' )
 		)
@@ -47,9 +47,14 @@ add_filter( 'display_post_states', 'al_add_post_state', 10, 2 );
 function al_add_post_state( $post_states, $post ) {
 
 	$staff_page = get_post_field( 'post_name', get_field('attorney_archive_page', 'option'));
+	$practice_page = get_post_field( 'post_name', get_field('practice_areas_parent', 'option'));
 
-	if( $post->post_name == $staff_page ) {
+	if( !empty($staff_page) && $post->post_name == $staff_page ) {
 		$post_states[] = 'Attorney Page';
+	}
+
+	if( !empty($practice_page) && $post->post_name == $practice_page ) {
+		$post_states[] = 'Practice Areas Page';
 	}
 
 	return $post_states;

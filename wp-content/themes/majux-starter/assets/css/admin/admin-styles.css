@@ -74,6 +74,9 @@
     flex-basis: 20%; /* 21% because 25% gives CSS bugs when content pushes width and not 20 because we want the max to be 4 */
     border-bottom: 1px solid #eee;
 }
+#practice-areas.repeat-horizontal .acf-repeater tr.acf-row:not(.acf-clone) {
+    flex-basis: 33%;
+}
 .repeat-horizontal .acf-repeater tr.acf-row:not(.acf-clone) td.acf-fields {
     width: 100% !important; /* important is necessary because it gets overwritten on drag&drop  */
 }

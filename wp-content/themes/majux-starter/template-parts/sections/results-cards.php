@@ -1,13 +1,13 @@
 <section class="results-cards">
 	<?php get_template_part('template-parts/modules/section-heading', null, $args['heading']); ?>
 
-	<div class="cards-wrapper container position-relative">
+	<div class="cards-wrapper container position-relative mb-5">
 		<div class="row row-cols-4 g-4">
 
 			<?php 
 			$cards 	= get_field('cards', 'option'); 
 			$i 		= 0;
-			$max 	= 6;
+			$max 	= 4;
 			?>
 			<?php 
 			if ( $cards ): 
@@ -23,4 +23,6 @@
 
 		</div>
 	</div>
+
+	<?php get_template_part('template-parts/modules/button', null, $args['button']); ?>
 </section>

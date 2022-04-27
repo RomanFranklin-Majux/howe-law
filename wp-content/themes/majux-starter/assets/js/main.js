@@ -88,3 +88,20 @@ const swiperAwards = new Swiper('.swiper-awards', {
     },
   },
 });
+
+
+// Testimonials slider
+const swiperTestimonials = new Swiper('.swiper-testimonials', {
+  // Optional parameters
+  loop: true,
+  speed: 1200,
+  // Default
+  slidesPerView: 1,
+  spaceBetween: 15,
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-testimonials-next',
+    prevEl: '.swiper-testimonials-prev',
+  },
+  enabled: true,
+});

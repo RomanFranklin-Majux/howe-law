@@ -1,5 +1,13 @@
 <?php $featured = get_the_post_thumbnail_url(); ?>
-<?php if (empty($featured)) : $featured = templateDir() . '/assets/images/masthead/default-masthead.jpg'; endif; ?>
+<?php 
+if (empty($featured)) : 
+	$parent = wp_get_post_parent_id($post->ID);
+	if ($parent == get_field('practice_areas_parent', 'option')) :
+		$featured = templateDir() . '/assets/images/masthead/practice-area-masthead.jpg';
+	else :
+		$featured = templateDir() . '/assets/images/masthead/default-masthead.jpg'; 
+	endif;
+endif; ?>
 
 <?php $title = get_the_title(); ?>
 

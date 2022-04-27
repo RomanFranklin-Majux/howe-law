@@ -19,7 +19,7 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_slug' 	=> 'results-cards',
 		'capability'	=> 'activate_plugins',
 		'redirect'		=> false,
-		'position' 		=> '20.1',
+		'position' 		=> '21',
 		'icon_url'		=> 'dashicons-images-alt2',
 	));
 
@@ -30,22 +30,11 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_slug' 	=> 'testimonials',
 		'capability'	=> 'activate_plugins',
 		'redirect'		=> false,
-		'position' 		=> '20.2',
+		'position' 		=> '21.2',
 		'icon_url' 		=> 'dashicons-format-quote',
 	));
 
-	// Practice Areas
-	acf_add_options_page(array(
-		'page_title' 	=> 'Practice Areas',
-		'menu_title'	=> 'Practice Areas',
-		'menu_slug' 	=> 'practice_areas',
-		'capability'	=> 'activate_plugins',
-		'redirect'		=> false,
-		'position' 		=> '22',
-		'icon_url' 		=> 'dashicons-hammer',
-	));
-
-	// Practice Areas
+	// Global Sections
 	acf_add_options_page(array(
 		'page_title' 	=> 'Global Sections',
 		'menu_title'	=> 'Global Sections',
@@ -71,7 +60,11 @@ function acf_location_rule_values_type( $choices ) {
 
 	// Add attorneys Page option to location values
 	$newChoices = 	array_slice($choices, 0, 2, true) +
-	            	array('attorneys_page' => 'Attorneys Page') +
+	            	array(
+	            		'attorneys_page' => 'Attorneys Page', 
+	            		'practice_areas' => 'Practice Areas Page', 
+	            		'single_practice_area' => 'Single Practice Area Page'
+	            		) +
 	            	array_slice($choices, 2, NULL, true);	
 
     return $newChoices;
@@ -84,22 +77,53 @@ function acf_location_rule_match_page_type( $match, $rule, $options, $field_grou
 {
     $post_id = $options['post_id'];
 
-    if ($rule['value'] != 'attorneys_page') return $match;
+	switch($rule['value']) :
+		case 'attorneys_page' : 
+			$match = false;
+		    if ($rule['operator'] == "==") {
+		    	if ( $post_id == get_field('attorneys_archive_page', 'option') ) : 
+		    		$match = true; 
+		    	endif;
+		    } elseif ($rule['operator'] == "!=") {
+		    	if ( $post_id != get_field('attorneys_archive_page', 'option') ) :
+					$match = true;
+				endif;
+		    }		
+		break;
+		case 'practice_areas' : 
+			$match = false;
+		    if ($rule['operator'] == "==") {
+		    	if ( $post_id == get_field('practice_areas_parent', 'option') ) : 
+		    		$match = true; 
+		    	endif;
+		    } elseif ($rule['operator'] == "!=") {
+		    	if ( $post_id != get_field('practice_areas_parent', 'option') ) :
+					$match = true;
+				endif;
+		    }			
+		break;
+		case 'single_practice_area' : 
+			$match = false;
+			$post_id = wp_get_post_parent_id($post_id);
+			print_r($post_id);
+		    if ($rule['operator'] == "==") {
+		    	if ( $post_id == get_field('practice_areas_parent', 'option') ) : 
+		    		$match = true; 
+		    	endif;
+		    } elseif ($rule['operator'] == "!=") {
+		    	if ( $post_id != get_field('practice_areas_parent', 'option') ) :
+					$match = true;
+				endif;
+		    }		
+		break;
+	endswitch;
 
-    if ($rule['operator'] == "==") {
-    	$match = false;
-    	if ( $post_id == get_field('attorneys_archive_page', 'option') ) : 
-    		$match = true; 
-    	endif;
-    } elseif ($rule['operator'] == "!=") {
-    	$match = false;
-    	if ( $post_id != get_field('attorneys_archive_page', 'option') ) :
-			$match = true;
-		endif;
-    }
-
-    return $match;
+	return $match;
 }
+
+
+
+
 
 
 ?>

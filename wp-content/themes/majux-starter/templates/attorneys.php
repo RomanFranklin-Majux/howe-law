@@ -17,7 +17,7 @@
 
 		<?php /* Attorneys */ ?>
 
-		<div class="row">
+		<div class="row gx-5">
 
 		<?php 		
 		$args = array(
@@ -32,8 +32,22 @@
 
 		if ( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post(); ?>
 			
-			<div class="col-md-4">
-				<?php echo get_the_title(); ?>
+			<div class="col-md-4 pb-5 attorney item">
+				<a href="<?php echo get_the_permalink(); ?>">
+					<div class="item-image">
+						<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+					</div>
+					<div class="details">
+						<span class="name"><?php echo get_the_title(); ?></span>
+						<br />
+						<?php $title = get_field('title'); ?>
+						<?php $title = (!empty($title)) ? $title : 'Attorney'; ?>
+						<span class="title"><?php echo $title; ?></span>
+					</div>
+					<div class="text-center my-4">
+						<div class="btn btn-primary">Read Profile</div>
+					</div>
+				</a>
 			</div>
 
 			<?php endwhile; ?>
