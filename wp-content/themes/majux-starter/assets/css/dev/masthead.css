@@ -105,6 +105,7 @@
 	font-size: var(--font-size-xl);
 	line-height: var(--font-size-xl);
 	text-transform: uppercase;
+	font-weight: 600;
 }
 
 .masthead-content .text-banner::before {
@@ -182,7 +183,7 @@
 }
 
 @media (max-width: 991px) {
-
+	.attorney-image { max-width: 100%; }
 }
 
 @media (max-width: 767px) {

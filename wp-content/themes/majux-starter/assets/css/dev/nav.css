@@ -17,7 +17,7 @@
 
 .nav-links li { margin: 0 30px; position: relative; line-height: 1; }
 .nav-links li:last-child { margin-right: 15px; }
-.nav-links li a { font-size: 20px; line-height: 20px; color: #fff; }
+.nav-links li a { font-size: 20px; line-height: 20px; color: #fff; font-weight: 600; }
 .nav-links li.nav-btn { margin-right: 0; }
 
 ul:not(#mobile-menu).nav-links li.nav-btn a {
@@ -124,7 +124,8 @@ li > .sub-menu li > .sub-menu {
 	z-index: 100;
 	transition: 0.3s;
 	transform: translateY(-100%);
-	overflow: auto;
+	overflow: scroll;
+	max-height: 100vh;
 }
 
 .admin-bar .mobile-menu-wrapper { padding-top: calc(var(--header-height) + 42px); }
@@ -142,6 +143,7 @@ li > .sub-menu li > .sub-menu {
 	padding: 16px 0;
 	display: block; 
 	margin: 0; 
+	color: #000;
 }
 
 .mobile-menu-wrapper ul.nav-links li .sub-menu li a { padding: 16px; }
@@ -237,4 +239,9 @@ li > .sub-menu li > .sub-menu {
 	.menu-item-has-children.sub-menu-open > .sub-menu { display: block; }
 
 
+}
+
+@media (max-width: 576px) {
+	.mobile-menu-wrapper 	{ padding-top: 	var(--header-height-576); }
+	.admin-bar .mobile-menu-wrapper 	{ padding-top: 	calc(var(--header-height-576) + 56px); }
 }

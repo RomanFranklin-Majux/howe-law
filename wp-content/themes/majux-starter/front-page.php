@@ -6,7 +6,7 @@
 
 
 	<?php /* Content Wrapper Start */ ?>
-	<?php $sidebar = (class_exists('ACF')) ? get_field('enable_sidebar') : true; ?>
+	<?php $sidebar = false; ?>
 	<?php get_template_part('template-parts/content/page-content', 'start', $sidebar); ?>
 
 

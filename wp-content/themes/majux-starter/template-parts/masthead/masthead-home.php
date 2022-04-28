@@ -3,7 +3,7 @@
 		<img src="<?php echo get_field('masthead_image'); ?>" alt="">
 	</div>
 
-	<div class="masthead-content-wrapper d-flex">
+	<div class="masthead-content-wrapper d-none d-lg-flex">
 		<div class="masthead-content">
 			<div class="text-banner"><?php echo get_field('headline'); ?></div>
 			<div class="cases" style="font-style:italic">
@@ -15,7 +15,7 @@
 			</div>
 			
 		</div>
-		<div class="masthead-contact-form">
+		<div class="masthead-contact-form d-none d-lg-block">
 			<p class="text-center font-size-xl" style="font-weight:600">Get a Free Case Review</p>
 			<?php echo do_shortcode(get_field('cf_shortcode')); ?>
 		</div>		

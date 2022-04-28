@@ -19,7 +19,7 @@
 				</a>
 			</div>	
 
-			<div class="callout w-auto d-flex align-items-center">
+			<div class="callout w-auto d-none d-lg-flex align-items-center">
 				<div class="left">
 					Call today for a<br /> <strong>free</strong> consultation
 				</div>
@@ -51,7 +51,7 @@
 			</div>
 		</div>
 
-		<div class="espanol-button">
+		<div class="espanol-button d-none d-lg-block">
 			<span>Se Habla Espa&ntilde;ol</span>
 		</div>		
 	</div>	
@@ -60,7 +60,7 @@
 
 <div class="mobile-menu-wrapper">
 	<?php wp_nav_menu( array(
-	    'theme_location' 	=> 'mainmenu',
+	    'theme_location' 	=> 'main-menu',
 	    'menu_id'        	=> 'mobile-menu',
 	    'menu_class'      	=> 'list-style-none nav-links d-flex flex-column align-items-start',
 	    'container'       	=> 'div',

@@ -110,6 +110,12 @@ h2, .h2 {
 	color: #000;
 }
 
+h3, .h3 {
+	font-size: 36px;
+	line-height: 44px;
+	color: #000;
+}
+
 p { font-family: var(--secondary-font); line-height: 28px; margin-bottom: 30px; }
 
 a { text-decoration: none; color: var(--link-color); }
